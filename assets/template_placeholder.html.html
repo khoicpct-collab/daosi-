@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PowerPoint Templates Information</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .template { border: 1px solid #ddd; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .download-btn { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            background: #3498db; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            margin: 10px 0; 
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 PowerPoint Templates for FlowSim</h1>
+    
+    <div class="template">
+        <h2>Title Template (title_template.pptx)</h2>
+        <p>Template for title slides with FlowSim branding</p>
+        <p><strong>Slides included:</strong> 1</p>
+        <a href="#" class="download-btn" onclick="createTemplate('title')">Create Template File</a>
+    </div>
+    
+    <div class="template">
+        <h2>Report Template (report_template.pptx)</h2>
+        <p>Complete report template with all slide layouts</p>
+        <p><strong>Slides included:</strong> 10</p>
+        <a href="#" class="download-btn" onclick="createTemplate('report')">Create Template File</a>
+    </div>
+    
+    <div class="template">
+        <h2>Presentation Template (presentation_template.pptx)</h2>
+        <p>Professional presentation template for meetings</p>
+        <p><strong>Slides included:</strong> 15</p>
+        <a href="#" class="download-btn" onclick="createTemplate('presentation')">Create Template File</a>
+    </div>
+    
+    <div class="template">
+        <h2>Educational Template (educational_template.pptx)</h2>
+        <p>Template designed for classroom and training use</p>
+        <p><strong>Slides included:</strong> 12</p>
+        <a href="#" class="download-btn" onclick="createTemplate('educational')">Create Template File</a>
+    </div>
+    
+    <script>
+        function createTemplate(type) {
+            // Create a placeholder PPTX file (in reality, this would be actual PowerPoint files)
+            const content = `FlowSim ${type} Template\n\nThis is a placeholder for the actual .pptx file.\nIn production, this would be a real PowerPoint template file.\n\nCreated: ${new Date().toISOString()}`;
+            
+            const blob = new Blob([content], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${type}_template.pptx`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert(`Template file created: ${type}_template.pptx\n\nNote: This is a placeholder. In production, use actual PowerPoint templates.`);
+        }
+    </script>
+</body>
+</html>
